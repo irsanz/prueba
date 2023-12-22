@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GestionNoticiasService } from '../servicios/gestion-noticias.service';
 
 @Component({
   selector: 'app-tab2',
@@ -6,7 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+onClick: any;
 
-  constructor() {}
+  constructor(public gestionNoticias: GestionNoticiasService) {
+    gestionNoticias.getNoticiasLeidas();
+  }
 
 }

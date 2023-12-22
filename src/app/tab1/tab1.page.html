@@ -1,17 +1,18 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      <b>Mis noticias</b>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
-</ion-content>
+<ion-list *ngFor= "let noticia of gestionNoticias.getNoticias()">
+  <ion-item> 
+  <ion-checkbox labelPlacement="end" justify="space-between" [(ngModel)]="isChecked" (ionChange)="updateChecked(noticia)">
+      <ion-label>
+        <h2>{{noticia.source.name}}</h2>
+        <p>{{noticia.title}}</p>
+    </ion-label>
+    </ion-checkbox>
+  </ion-item>
+</ion-list>
