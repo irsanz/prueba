@@ -8,7 +8,7 @@
 
 <ion-list *ngFor= "let noticia of gestionNoticias.getNoticias()">
   <ion-item> 
-  <ion-checkbox labelPlacement="end" justify="space-between" [(ngModel)]="isChecked" (ionChange)="updateChecked(noticia)">
+  <ion-checkbox labelPlacement="end" justify="start" [(ngModel)]="isChecked" (ionChange)="updateChecked(noticia)">
       <ion-label>
         <h2>{{noticia.source.name}}</h2>
         <p>{{noticia.title}}</p>
